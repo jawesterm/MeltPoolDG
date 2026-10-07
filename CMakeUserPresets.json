@@ -1,0 +1,33 @@
+{
+  "version": 9,
+  "configurePresets": [
+    {
+      "name": "local-paths",
+      "hidden": true,
+      "cacheVariables": {
+        "ADAFLO_INCLUDE": "${sourceDir}/../adaflo/source-adaflo/include",
+        "DEAL_II_DIR": "${sourceDir}/../dealii/build"
+      }
+    },
+    {
+      "name": "user-release",
+      "inherits": [
+        "local-paths",
+        "release"
+      ],
+      "cacheVariables": {
+        "ADAFLO_LIB": "${sourceDir}/../adaflo/release-build"
+      }
+    },
+    {
+      "name": "user-debug",
+      "inherits": [
+        "local-paths",
+        "debug"
+      ],
+      "cacheVariables": {
+        "ADAFLO_LIB": "${sourceDir}/../adaflo/debug-build"
+      }
+    }
+  ]
+}
